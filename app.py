@@ -44,12 +44,13 @@ if st.button('Recommend'):
 	names, posters = recommend(selected_movie_name)
     
     # display the results in columns
-    cols = st.columns(5)
+    cols = st.beta_columns(5)
     for i, col in enumerate(cols):
         col.image(posters[i])
         col.caption(names[i])
  
 	
+
 
 
 
