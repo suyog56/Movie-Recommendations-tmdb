@@ -19,7 +19,7 @@ def fetch_poster(movie_id):
 movies_dict = pickle.load(open('movies_dict.pkl','rb'))
 movies = pd.DataFrame(movies_dict)
 new_df = movies.copy()
-top_similar = pickle.load(open('top_similar.pkl','rb'))  # precomputed top-N
+top_similar = pickle.load(open('similarity.pkl.gz','rb'))  # precomputed top-N
 
 def recommend(movie):
     movie_index = new_df[new_df["title"] == movie].index[0]
