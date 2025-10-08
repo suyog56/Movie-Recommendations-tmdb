@@ -21,7 +21,7 @@ movies = pd.DataFrame(movies_dict)
 new_df = movies.copy()  # Fix missing new_df
 
 # Dummy similarity matrix (replace with your actual similarity)
-similarity = pickle.load(open('similarity.pkl','rb'))  # assuming you have this
+#similarity = pickle.load(open('similarity.pkl','rb'))  # assuming you have this
 
 def recommend(movie):
     # find the index of the selected movie
@@ -67,3 +67,4 @@ if st.button('Show Recommendation'):
     with col5:
         st.text(names[4])
         st.image(posters[4])
+
