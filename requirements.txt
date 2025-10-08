@@ -306,7 +306,7 @@ librmm-cu12==25.6.0
 librosa==0.11.0
 libucx-cu12==1.18.1
 libucxx-cu12==0.44.0
-lightgbm @ file:///tmp/lightgbm/LightGBM/dist/lightgbm-4.6.0-py3-none-linux_x86_64.whl
+lightgbm==4.6.0
 linkify-it-py==2.0.3
 llvmlite==0.43.0
 locket==1.0.0
@@ -466,7 +466,6 @@ pygit2==1.18.2
 Pygments==2.19.2
 PyGObject==3.42.0
 PyJWT==2.10.1
-pylibcudf-cu12 @ https://pypi.nvidia.com/pylibcudf-cu12/pylibcudf_cu12-25.6.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
 pylibcugraph-cu12==25.6.0
 pylibraft-cu12==25.6.0
 pymc==5.25.1
