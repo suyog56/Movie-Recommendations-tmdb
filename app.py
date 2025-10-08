@@ -28,7 +28,7 @@ def recommend(moive):
 
 
 movies_dict = pickle.load(open('movies_dict.pkl','rb'))
-movies = pd.Dataframe(movies_dict)
+movies = pd.DataFrame(movies_dict)
 
 st.title("Moive Recommender System")
 selected_moive_name = st.selectbox('Select the moive?',movies['title'].values)
@@ -53,3 +53,4 @@ if st.button("recommend"):
     st.image(posters[4])
 
 	
+
