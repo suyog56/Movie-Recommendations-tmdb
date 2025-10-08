@@ -10,10 +10,10 @@ def fetch_poste(moive_id):
      full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
      return full_path
      #return "https://image.tmdb.org/t/p/w500/" + data['poster_path']
-
+new_df = movies.copy()
 def recommend(movie):
     # find the index of the selected movie
-    movie_index = new_df[new_df["title"] == movie].index[0]
+    movie_index = new_df[movies["title"] == movie].index[0]
     
     # compute similarity scores
     distances = similarity[movie_index]
@@ -40,7 +40,7 @@ st.title("Moive Recommender System")
 selected_moive_name = st.selectbox('Select the moive?',movies['title'].values)
 
 if st.button("recommend"):
-  names ,posters = recommend(selected_moive_name)
+  names ,posters = recommend(selected_movie_name)
   col1, col2, col3, col4, col5 = st.beta_columns(5)
   with col1:
     st.text(names[0])
@@ -59,5 +59,6 @@ if st.button("recommend"):
     st.image(posters[4])
 
 	
+
 
 
