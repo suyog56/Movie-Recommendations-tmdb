@@ -10,21 +10,27 @@ def fetch_poste(moive_id):
      full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
      return full_path
      #return "https://image.tmdb.org/t/p/w500/" + data['poster_path']
-def recommend(moive): 
-  movie_index =new_df[movies["title"] == moive].index[0] #get index
-  distances = similarity[movie_index] #find similarity
-  movies_list = sorted(list(enumerate(distances)),reverse = True,key=lambda x:x[1])[1:6]
 
-  recommended_moives = []
-  recommende_moviee_posters = []
-
-  for i in movies_list:
-    movie_id = movies.iloc[i[0]].movie_id
+def recommend(movie):
+    # find the index of the selected movie
+    movie_index = new_df[new_df["title"] == movie].index[0]
     
-    recommended_moives.append(movies.iloc[i[0]].title)
-    #fetch poster form api
-    recommende_moviee_posters.append(fetch_poste(movie_id[0]))
-  return recommended_moives
+    # compute similarity scores
+    distances = similarity[movie_index]
+    
+    # get top 5 similar movies (excluding the first itself)
+    movie_list = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:6]
+    
+    recommended_movies = []
+    recommended_posters = []
+    
+    for i in movie_list:
+        movie_id = new_df.iloc[i[0]].movie_id
+        recommended_movies.append(new_df.iloc[i[0]].title)
+        recommended_posters.append(fetch_poster(movie_id))
+    
+    return recommended_movies, recommended_posters
+
 
 
 movies_dict = pickle.load(open('movies_dict.pkl','rb'))
@@ -53,4 +59,5 @@ if st.button("recommend"):
     st.image(posters[4])
 
 	
+
 
