@@ -4,9 +4,6 @@ import pandas as pd
 import requests
 import pickle, gzip
 
-with gzip.open('similarity.pkl.gz', 'rb') as f:
-    similarity = pickle.load(f)
-
 def fetch_poste(moive_id):
      responce = requests.get('https://api.themoviedb.org/3/movie/{}?api_key=8a5b5879a3c61ee2ca3e536245035b10&language=en-US'.format(moive_id))
      data = responce.json()
