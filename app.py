@@ -39,9 +39,9 @@ movies = pd.DataFrame(movies_dict)
 st.title("Moive Recommender System")
 selected_moive_name = st.selectbox('Select the moive?',movies['title'].values)
 
-if st.button("recommend"):
-	if st.button('Recommend'):
-    names, posters = recommend(selected_movie_name)
+
+if st.button('Recommend'):
+	names, posters = recommend(selected_movie_name)
     
     # display the results in columns
     cols = st.columns(5)
@@ -50,6 +50,7 @@ if st.button("recommend"):
         col.caption(names[i])
  
 	
+
 
 
 
