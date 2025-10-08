@@ -27,7 +27,7 @@ def recommend(moive):
   return recommended_moives
 
 
-movies_dict = pickle.load(open('moives_dict.pkl','rb'))
+movies_dict = pickle.load(open('movies_dict.pkl','rb'))
 movies = pd.Dataframe(movies_dict)
 
 st.title("Moive Recommender System")
@@ -51,4 +51,5 @@ if st.button("recommend"):
   with col5:
     st.text(names[4])
     st.image(posters[4])
+
 	
