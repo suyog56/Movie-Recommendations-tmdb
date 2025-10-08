@@ -13,7 +13,7 @@ def fetch_poste(moive_id):
 #new_df = movies.copy()
 def recommend(movie):
     # find the index of the selected movie
-    movie_index = new_df[movies["title"] == movie].index[0]
+    movie_index = new_df[movies["title"] == movie].index[0]]
     
     # compute similarity scores
     distances = similarity[movie_index]
@@ -62,5 +62,6 @@ if st.button('Show Recommendation'):
  with col5:
     st.text(names[4])
     st.image(posters[4])
+
 
 
