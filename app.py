@@ -58,20 +58,3 @@ if st.button('Show Recommendation'):
  with col5:
 	 st.text(names[4])
      st.image(posters[4])
-
- 
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
